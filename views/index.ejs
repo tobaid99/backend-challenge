@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Welcome To Twitter</h3>
+    <a href="/addtweet"> Add Tweet</a>
+
+    
+        <% if (tweets.length>0){ %>
+            <% tweets.forEach(tweet=>{ %>
+        <div class="card">
+            <h2><%=tweet.title %></h2>
+            <h6><%= tweet.tweet %></h6>
+            <h6><%= tweet.create_at%></h6>
+            <a href="/tweet/<%= tweet._id %>">See More</a>
+        
+            <% }) %>
+        <%} else {%> 
+            <h5>No Tweet</h5>
+    
+        <% } %>
+
+</body>
+</html>
